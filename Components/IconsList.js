@@ -1,15 +1,15 @@
 import IconItem from "./IconItem";
-import './IconList.css'
+import classes from './IconList.module.css'
 
 const IconsList = (props) => {
     return (
-        <ul className="list">
+        <ul className={classes.list}>
           {props.icons.map((icon) => (
             <IconItem
               key={icon.id}
               id={icon.id}
               image={icon.image}
-              title={icon.title}
+              name={icon.name}
               address={icon.address}
             />
           ))}

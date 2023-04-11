@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './NewIconForm.css'
+import classes from './NewIconForm.module.css'
 
 const NewIconForm = () => {
       const [name, setName] = useState("");
@@ -25,20 +25,20 @@ const NewIconForm = () => {
         };
 
   return (
-    <form className="form" onSubmit={submitHandler}>
-        <div className="control">
+    <form className={classes.form} onSubmit={submitHandler}>
+        <div className={classes.control}>
           <label htmlFor='title'>Stadium Name</label>
           <input type='text' required id='title' value={name} onChange={nameHandler}/>
         </div>
-        <div className="control">
+        <div className={classes.control}>
           <label htmlFor='image'>Stadium Image</label>
           <input type='url' required id='image' value={image} onChange={imageHandler}/>
         </div>
-        <div className="control">
+        <div className={classes.control}>
           <label htmlFor='address'>Address</label>
           <input type='text' required id='address' value={address} onChange={addressHandler}/>
         </div>
-        <div className="control">
+        <div className={classes.control}>
           <label htmlFor='description'>Description</label>
           <textarea
             id='description'
@@ -48,7 +48,7 @@ const NewIconForm = () => {
             onChange={descriptionHandler}
           ></textarea>
         </div>
-        <div className="actions">
+        <div className={classes.actions}>
           <button>Add Stadium</button>
         </div>
       </form>
