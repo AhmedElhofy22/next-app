@@ -1,5 +1,5 @@
 import IconsList from '/Components/IconsList'
-import React from 'react'
+import Layout from '@/Components/Layout';
 
 const DUMMY_ICONS = [
   {
@@ -20,9 +20,9 @@ const DUMMY_ICONS = [
 
 const index = () => {
   return (
-    <div>
+    <Layout>
       <IconsList icons={DUMMY_ICONS}/>
-    </div>
+    </Layout>
   )
 }
 

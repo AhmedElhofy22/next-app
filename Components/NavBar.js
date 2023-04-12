@@ -1,4 +1,5 @@
 import classes from './NavBar.module.css'
+import Link from 'next/link'
 
 const NavBar = () => {
   return (
@@ -7,10 +8,10 @@ const NavBar = () => {
     <nav>
       <ul>
         <li>
-          <Link to='/'>All Stadiums</Link>
+          <Link href='/'>All Stadiums</Link>
         </li>
         <li>
-          <Link to='/new-stadium'>Add New Stadium</Link>
+          <Link href='/new-stadium'>Add New Stadium</Link>
         </li>
       </ul>
     </nav>
