@@ -3,8 +3,7 @@ import Link from 'next/link'
 
 const IconItem = (props) => {
     return (
-        <li className={classes.item}>
-      
+    <li className={classes.item}>
         <div className={classes.image}>
           <img src={props.image} alt={props.name} />
         </div>
@@ -15,7 +14,6 @@ const IconItem = (props) => {
         <div className={classes.actions}>
           <Link href={`/${props.id}`}>Show Details</Link>
         </div>
-      
     </li>
       );
 }
