@@ -1,4 +1,5 @@
 import classes from './IconItem.module.css'
+import Link from 'next/link'
 
 const IconItem = (props) => {
     return (
@@ -12,7 +13,7 @@ const IconItem = (props) => {
           <address>{props.address}</address>
         </div>
         <div className={classes.actions}>
-          <button>Show Details</button>
+          <Link href={`/${props.id}`}>Show Details</Link>
         </div>
       
     </li>

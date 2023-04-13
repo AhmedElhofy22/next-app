@@ -1,5 +1,4 @@
 import IconsList from '/Components/IconsList'
-import Layout from '@/Components/Layout';
 
 const DUMMY_ICONS = [
   {
@@ -11,19 +10,17 @@ const DUMMY_ICONS = [
   },
   {
     id: 'm2',
-    name: 'A Second Meetup',
+    name: 'A Second Stadium',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg',
     address: 'Some address 10, 12345 Some City',
-    description: 'This is a second meetup!'
+    description: 'This is a second Stadium!'
   }
 ];
 
-const index = () => {
+const HomePage = () => {
   return (
-    <Layout>
       <IconsList icons={DUMMY_ICONS}/>
-    </Layout>
   )
 }
 
-export default index
+export default HomePage;
