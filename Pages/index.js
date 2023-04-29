@@ -1,4 +1,7 @@
 import IconsList from '/Components/IconsList'
+import { Fragment } from 'react';
+import Head from 'next/head';
+import { MongoClient } from 'mongodb';
 
 const DUMMY_ICONS = [
   {
@@ -17,10 +20,47 @@ const DUMMY_ICONS = [
   }
 ];
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
-      <IconsList icons={DUMMY_ICONS}/>
+    <Fragment>
+      <Head>
+        <title>React Meetups</title>
+        <meta
+          name='description'
+          content='Browse a huge list of mundial stadiums!'
+        />
+      </Head>
+      <IconsList icons={props.stadiums}/>;
+    </Fragment>
+      
   )
+}
+
+export async function getStaticProps() {
+  // fetch data from an API
+  const client = await MongoClient.connect(
+    
+    'mongodb+srv://ahmedelhofy8686:ahmd8798@cluster0.jsbp5cd.mongodb.net/?retryWrites=true&w=majority'
+  );
+  const db = client.db();
+
+  const stadiumsCollection = db.collection('stadiums');
+
+  const stadiums = await stadiumsCollection.find().toArray();
+
+  client.close();
+
+  return {
+    props: {
+      stadiums: stadiums.map((stadium) => ({
+        name: stadium.name,
+        address: stadium.address,
+        image: stadium.image,
+        id: stadium._id.toString(),
+      })),
+    },
+    revalidate: 1,
+  };
 }
 
 export default HomePage;

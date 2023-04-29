@@ -4,13 +4,13 @@ import classes from './IconList.module.css'
 const IconsList = (props) => {
     return (
         <ul className={classes.list}>
-          {props.icons.map((icon) => (
+          {props.stadiums.map((stadium) => (
             <IconItem
-              key={icon.id}
-              id={icon.id}
-              image={icon.image}
-              name={icon.name}
-              address={icon.address}
+              key={stadium.id}
+              id={stadium.id}
+              image={stadium.image}
+              name={stadium.name}
+              address={stadium.address}
             />
           ))}
         </ul>
